@@ -1,4 +1,4 @@
-{% load static %} {% url 'home' as home_url %}
+{% load static %} {% url 'home' as home_url %} {% url 'about' as about_url %}
 
 <!doctype html>
 <html class="h-100" lang="en">
@@ -66,6 +66,9 @@
                 href="{% url 'home' %}"
                 >Home</a
               >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ about_url }}">About</a>
             </li>
           </ul>
           <span class="navbar-text text-muted">
