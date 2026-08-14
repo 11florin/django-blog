@@ -1,8 +1,10 @@
 from django.contrib import admin
 from .models import About
+from django_summernote.admin import SummernoteModelAdmin
+
 
 # Register your models here.
 @admin.register(About)
-class AboutAdmin(admin.ModelAdmin):
-    list_display = ("title", "updated_on")
-    ordering = ("-updated_on",)
+class AboutAdmin(SummernoteModelAdmin):
+    
+    summernote_fields = ('content',)
