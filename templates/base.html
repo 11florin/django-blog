@@ -1,6 +1,5 @@
-{% load static %} {% url 'home' as home_url %} {% url 'about' as about_url %} 
-{%url 'account_login' as login_url %} 
-{% url 'account_signup' as signup_url %} 
+{% load static %} {% url 'home' as home_url %} {% url 'about' as about_url %}
+{%url 'account_login' as login_url %} {% url 'account_signup' as signup_url %}
 {%url 'account_logout' as logout_url %}
 
 <!doctype html>
@@ -114,6 +113,11 @@
     </nav>
 
     <main class="flex-shrink-0 main-bg">
+      {% if user.is_authenticated %}
+      <p class="text-end m-3">You are logged in as {{ user }}</p>
+      {% else %}
+      <p class="text-end m-3">You are not logged in</p>
+      {% endif %}
       {% block content %}
       <!-- Content Goes here -->
       <p>This is my default paragraph</p>
