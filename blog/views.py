@@ -50,7 +50,6 @@ def post_detail(request, slug):
                 'Comment submitted and awaiting approval')
 
     comment_form = CommentForm()
-
     return render(
         request,
         "blog/post_detail.html",
