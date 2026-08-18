@@ -24,7 +24,7 @@ if (commentText && commentForm && submitButton) {
     button.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const commentId = button.getAttribute("comment_id");
+      const commentId = button.getAttribute("data-comment_id");
       const commentElement = document.getElementById(`comment${commentId}`);
 
       if (!commentElement) {
@@ -58,7 +58,7 @@ if (commentText && commentForm && submitButton) {
 if (deleteModal && deleteConfirm) {
   for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
-      const commentId = button.getAttribute("comment_id");
+      const commentId = button.getAttribute("data-comment_id");
       deleteConfirm.href = `${window.location.pathname.replace(/\/$/, "")}/delete_comment/${commentId}`;
       deleteModal.show();
     });
